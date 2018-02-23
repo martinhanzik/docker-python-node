@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t python-node .
+  - docker run python-node /bin/sh -c "yarn -v && node -v && python --version"
